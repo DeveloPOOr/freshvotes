@@ -1,13 +1,13 @@
-package com.freshvotes.freshvotes;
+package com.freshvotes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FreshvotesApplication {
+public class FreshVotesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FreshvotesApplication.class, args);
+		SpringApplication.run(FreshVotesApplication.class, args);
 	}
 
 }
