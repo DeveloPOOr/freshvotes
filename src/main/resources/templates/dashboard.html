@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>dashboard</title>
@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>Welcome to Dashboard</h1>
+    <form action="/logout" method="post">
+        <input type = "hidden" th:name="${_csrf.getParameterName()}" th:value="${_csrf.getToken()}">
+        <button type="submit">Logout</button>
+    </form>
 
-    <a href="/logout">Logout </a>
 </body>
 </html>
