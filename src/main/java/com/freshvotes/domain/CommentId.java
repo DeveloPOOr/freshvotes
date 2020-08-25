@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class CommentId implements Serializable {
 
     private User user;
+    private Feature feature;
 
     @ManyToOne
     public User getUser() {
@@ -27,5 +28,5 @@ public class CommentId implements Serializable {
         this.feature = feature;
     }
 
-    private Feature feature;
+
 }

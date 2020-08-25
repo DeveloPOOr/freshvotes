@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script   src="https://code.jquery.com/jquery-3.5.1.slim.js"   integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="   crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $("#back").click(function(){
+                window.location.href = "/login";
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header"><h2>Register an Account</h2></div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <input type = "hidden" th:name="${_csrf.getParameterName()}" th:value="${_csrf.getToken()}">
+
+                    <div class="form-group row">
+                        <label  class="col-12 col-sm-3 col-md-2 col-form-label">Name</label>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <input type="text"  class="form-control"  placeholder="Username" th:field = "${user.name}" >
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label  class="col-12 col-sm-3 col-md-2 col-form-label">Email</label>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <input type="text"  class="form-control"  placeholder="Email@mail.com" th:field = "${user.username}" >
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-12 col-sm-3 col-md-2 col-form-label">Password:</label>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" th:field = "${user.password}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="confirmPassword" class="col-12 col-sm-3 col-md-2 col-form-label">Confirm Password:</label>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Password" >
+                        </div>
+                    </div>
+
+                    <button type="submit" id="back" class="btn btn-info">back</button>
+                    <button type="submit" class="btn btn-success">Create Account</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
